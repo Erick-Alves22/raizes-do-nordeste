@@ -1,0 +1,11 @@
+const state={total:0};
+const money=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const order=document.querySelector('#pedido');
+const payment=document.querySelector('#payment');
+const openOrder=()=>{order.hidden=false;order.scrollIntoView({behavior:'smooth',block:'start'});};
+document.querySelector('#start').onclick=openOrder;
+document.querySelectorAll('a[href="#pedido"]').forEach(link=>link.onclick=e=>{e.preventDefault();openOrder();});
+document.querySelector('#add').onclick=()=>{const price=Number(document.querySelector('#product').value);const qty=Math.max(1,Number(document.querySelector('#quantity').value)||1);state.total+=price*qty;document.querySelector('#total').textContent=`Total: ${money(state.total)}`;};
+document.querySelector('#finish').onclick=()=>{const msg=document.querySelector('#message');if(state.total===0){msg.textContent='Adicione pelo menos um produto.';msg.style.color='#b33';return}if(!document.querySelector('#consent').checked){msg.textContent='É necessário aceitar o uso dos dados para continuar.';msg.style.color='#b33';return}msg.textContent='Pedido revisado. Agora escolha uma forma de pagamento mock.';msg.style.color='#23824a';payment.hidden=false;payment.scrollIntoView({behavior:'smooth',block:'start'});};
+document.querySelector('#confirmMock').onclick=()=>{const msg=document.querySelector('#paymentMessage');msg.textContent='Pagamento MOCK aprovado! Pedido RD-001 criado. Nenhuma cobrança foi realizada.';msg.style.color='#23824a';};
+document.querySelectorAll('[data-mode]').forEach(btn=>btn.onclick=()=>{document.body.className=btn.dataset.mode;window.scrollTo({top:0,behavior:'smooth'});});

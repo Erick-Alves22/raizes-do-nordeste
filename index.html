@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raízes do Nordeste | Sabores que acolhem</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="site">
+  <header class="topbar">
+    <a class="brand" href="#inicio"><span>RAÍZES DO NORDESTE</span><small>sabores que acolhem</small></a>
+    <nav class="nav"><a href="#cardapio">Cardápio</a><a href="#beneficios">Fidelidade</a><a href="#pedido">Meu pedido</a><button data-mode="site">Site</button><button data-mode="app">App</button><button data-mode="totem">Totem</button></nav>
+  </header>
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy"><span class="tag">Nossa raiz, seu sabor</span><h1>Comida que abraça.</h1><p>Peça seus favoritos com a praticidade de sempre e o sabor que vem das nossas raízes nordestinas.</p><div class="hero-actions"><button class="primary" id="start">Ver cardápio</button><a class="link-button" href="#beneficios">Conheça a nossa história</a></div></div>
+      <div class="hero-photo" aria-label="Comida nordestina servida à mesa"></div>
+    </section>
+    <section class="quick-links" id="beneficios"><div><strong>Pedido fácil</strong><span>Escolha, confirme e acompanhe.</span></div><div><strong>Retire onde quiser</strong><span>Na unidade, no balcão ou no pickup.</span></div><div><strong>Ganhe pontos</strong><span>Fidelidade em todas as unidades.</span></div></section>
+    <section class="content-section" id="cardapio"><div class="section-title"><div><span class="tag">Para matar a saudade</span><h2>Favoritos da casa</h2></div><span class="unit">Unidade Centro ▾</span></div><div class="food-grid"><article><img src="assets/combo-sertao.jpg" alt="Combo Sertão com carne de sol e farofa"><h3>Combo Sertão</h3><p>Carne de sol, farofa, feijão e bebida.</p><strong>R$ 18,90</strong></article><article><img src="assets/tapioca-feira.jpg" alt="Tapioca da Feira recheada com queijo e carne de sol"><h3>Tapioca da Feira</h3><p>Massa fresquinha com queijo e carne de sol.</p><strong>R$ 12,50</strong></article><article><img src="assets/cuscuz-nordestino.jpg" alt="Cuscuz Nordestino com ovo e carne seca"><h3>Cuscuz Nordestino</h3><p>Receita afetiva com ovo, manteiga e carne seca.</p><strong>R$ 10,90</strong></article></div></section>
+    <section class="card order-card" id="pedido" hidden><div class="card-title"><h2>Monte seu pedido</h2><span class="step">1 de 2</span></div><label>Produto<select id="product"><option value="18.90">Combo Sertão — R$ 18,90</option><option value="12.50">Tapioca da Feira — R$ 12,50</option><option value="10.90">Cuscuz Nordestino — R$ 10,90</option></select></label><label>Quantidade<input id="quantity" type="number" min="1" value="1"></label><button class="primary full" id="add">Adicionar ao pedido</button><div class="total-line" id="total">Total: R$ 0,00</div><label class="consent"><input id="consent" type="checkbox"> Aceito o uso dos meus dados para processar o pedido, conforme a LGPD.</label><button class="secondary full" id="finish">Continuar para pagamento mock</button><p id="message" class="message" role="status"></p></section>
+    <section class="card payment-card" id="payment" hidden><div class="card-title"><h2>Pagamento demonstrativo</h2><span class="mock-badge">MOCK</span></div><p class="payment-info">Esta tela simula uma integração de pagamento. Nenhuma cobrança será realizada e nenhum dado será enviado.</p><div class="payment-methods"><label><input type="radio" name="method" value="cartao" checked> Cartão de teste</label><label><input type="radio" name="method" value="pix"> PIX simulado</label></div><label>Número do cartão de teste<input id="cardNumber" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19"></label><div class="fields"><label>Validade<input placeholder="12/30" maxlength="5"></label><label>CVV<input placeholder="000" maxlength="3"></label></div><button class="primary full" id="confirmMock">Confirmar pagamento mock</button><p id="paymentMessage" class="message" role="status"></p></section>
+  </main>
+  <footer><strong>RAÍZES DO NORDESTE</strong> · Sabores que carregam nossa história · Pagamento demonstrativo, sem cobrança real.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
